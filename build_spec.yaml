@@ -8,10 +8,10 @@ steps:
     timeoutInSeconds: 1200
     name: "Build container image"
     command: |
-      d ${OCI_WORKSPACE_DIR}/node_app
-      docker build -t myapp:v1.0  .
+      cd ${OCI_WORKSPACE_DIR}/node_app
+      docker build -t myapp:v1.0 .
 outputArtifacts:
- - name: school-api
-  type: DOCKER_IMAGE
-  location: school-api:v1.0
+  - name: school-api
+    type: DOCKER_IMAGE
+    location: school-api:v1.0
 
